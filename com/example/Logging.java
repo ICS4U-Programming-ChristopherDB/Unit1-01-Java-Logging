@@ -46,9 +46,11 @@ public final class Logging {
             // Gets the user's length choice.
             final int logLengthChoice = sc.nextInt() - 1;
             // Calculates the number of logs the truck can contain.
-            float maxLogs = maxTruckWeight / (logWeight * logLengths[logLengthChoice]);
+            float divisor = logWeight * logLengths[logLengthChoice];
+            float maxLogs = maxTruckWeight / divisor;
             // Displays the number of logs the truck can contain.
-            System.out.println("You can fit " + maxLogs + " logs in the truck.");
+            System.out.print("You can fit " + maxLogs);
+            System.out.println(" logs in the truck.");
         } catch (Exception e) {
             // Tells the user they did not choose a listed length.
             System.out.println("You must enter a listed length!");
